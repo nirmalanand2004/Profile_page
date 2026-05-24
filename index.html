@@ -629,23 +629,39 @@
         }
 
         .certificate-image {
-            width: 100%;
-            aspect-ratio: 4/3;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(30, 64, 175, 0.1));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-light);
-            font-size: 0.85rem;
-            position: relative;
-            overflow: hidden;
-        }
+    width: 100%;
+    aspect-ratio: 4/3;
 
-        .certificate-image::before {
-            content: 'ADD CERTIFICATE IMAGE';
-            text-align: center;
-            font-weight: 500;
-        }
+    background: linear-gradient(
+        135deg,
+        #f8e7c7,
+        #f4d8a8
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid rgba(205, 133, 63, 0.25);
+}
+
+.certificate-image i {
+    font-size: 4rem;
+
+    color: #d97706;
+
+    text-shadow:
+        0 0 15px rgba(255, 166, 0, 0.25);
+
+    transition: 0.4s ease;
+}
+
+.certificate-card:hover .certificate-image i {
+    transform: scale(1.1) rotate(5deg);
+
+    color: #ea580c;
+}
+
 
         .certificate-content {
             padding: 1.5rem;
@@ -1272,7 +1288,9 @@
         <h2 class="section-title">Certificates & Achievements</h2>
         <div class="certificates-grid">
             <div class="certificate-card">
-                <div class="certificate-image"></div>
+                <div class="certificate-image">
+                    <i class="fas fa-award"></i>
+                </div>
                 <div class="certificate-content">
                     <h4>Training Completion</h4>
                     <p class="issuer">Issued by Skill Vertex</p>
@@ -1282,7 +1300,9 @@
             </div>
 
             <div class="certificate-card">
-                <div class="certificate-image"></div>
+                <div class="certificate-image">
+                    <i class="fas fa-award"></i>
+                </div>
                 <div class="certificate-content">
                     <h4>Internship Completion</h4>
                     <p class="issuer">Issued by Skill Vertex</p>
@@ -1292,7 +1312,9 @@
             </div>
 
             <div class="certificate-card">
-                <div class="certificate-image"></div>
+                <div class="certificate-image">
+                    <i class="fas fa-award"></i>
+                </div>
                 <div class="certificate-content">
                     <h4>Internship</h4>
                     <p class="issuer">Issued by FrontierWox Tech</p>
