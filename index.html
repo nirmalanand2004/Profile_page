@@ -13,26 +13,36 @@
         }
 
         :root {
-            --primary: #3b82f6;
-            --secondary: #1e40af;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --text-light: #9ca3af;
-            --border: #e5e7eb;
-            --transition: all 0.3s ease;
-        }
+    --primary: #5b7c99;
+    --secondary: #d98c3f;
+
+    --text-primary: #2f3542;
+    --text-secondary: #5c6773;
+    --text-light: #8b949e;
+
+    --border: #e0ccb3;
+
+    --transition: all 0.3s ease;
+}
+        
 
         html {
             scroll-behavior: smooth;
         }
+        
+       body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 50%, #e8f5e9 100%);
-            min-height: 100vh;
-        }
+    background:
+        radial-gradient(circle at top left, rgba(255, 214, 153, 0.35), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(217, 140, 63, 0.12), transparent 25%),
+        linear-gradient(135deg, #fff8ef 0%, #f7ead9 50%, #f2dfc7 100%);
+
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
         .container {
             max-width: 1100px;
@@ -41,19 +51,21 @@
         }
 
         header {
-            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
-            border-bottom: 2px solid rgba(59, 130, 246, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-        }
+    background: linear-gradient(135deg, #6c8ba7 0%, #5b7c99 100%);
+    border-bottom: 2px solid rgba(91, 124, 153, 0.25);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
+            gap: 2rem;
         }
 
         .logo {
@@ -67,6 +79,26 @@
             display: flex;
             list-style: none;
             gap: 2.5rem;
+        }
+
+        #certificates {
+            margin-top: 5rem;
+        }
+
+        #internship {
+            margin-top: 5rem;
+        }
+
+        #contact {
+            margin-top: 5rem;
+        }
+
+        #projects {
+            margin-top: 5rem;
+        }
+
+        #education {
+            margin-top: 5rem;
         }
 
         .nav-links a {
@@ -151,40 +183,67 @@
         }
 
         .btn {
-            display: inline-block;
-            padding: 0.75rem 2rem;
-            background: linear-gradient(135deg, #3b82f6, #1e40af);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            border: 2px solid #3b82f6;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: var(--transition);
-            transform: translateY(0);
-        }
+    display: inline-block;
+    padding: 0.75rem 2rem;
+
+    background: linear-gradient(135deg, #d98c3f, #c47a2c);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    border: 2px solid #d98c3f;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    transition: var(--transition);
+
+    transform: translateY(0);
+
+    box-shadow:
+        0 4px 12px rgba(255, 148, 42, 0.732);
+}
 
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(59, 130, 246, 0.4);
-            border-color: #1e40af;
-        }
+    transform: translateY(-3px);
+
+    background: linear-gradient(135deg, #ff8e1c, #ff8c19);
+
+    box-shadow:
+        0 10px 22px rgba(217,140,63,0.35);
+
+    border-color: #c47a2c;
+}
 
         .btn:active {
             transform: scale(0.98);
         }
 
         .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
+    background: rgba(255,255,255,0.15);
 
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-        }
+    color: rgb(0, 0, 0);
+
+    border: 2px solid rgba(255,255,255,0.4);
+
+    backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+
+    background: rgba(255,255,255,0.28);
+
+    box-shadow:
+        0 8px 18px rgba(255,255,255,0.18);
+
+    border-color: white;
+}
 
         @keyframes fadeInDown {
             from {
@@ -281,6 +340,13 @@
             animation: slideInLeft 0.8s ease;
         }
 
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
         .profile-image:hover {
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(30, 64, 175, 0.15));
             border-color: var(--primary);
@@ -288,7 +354,6 @@
         }
 
         .profile-image::before {
-            content: 'ADD PROFILE IMAGE';
             font-size: 0.85rem;
             position: absolute;
             bottom: 20px;
@@ -350,10 +415,11 @@
             background: white;
             border: 2px solid rgba(59, 130, 246, 0.2);
             border-radius: 12px;
-            overflow: hidden;
+            overflow: visible;
             transition: var(--transition);
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+            justify-content: space-between;
         }
 
         .project-card:hover {
@@ -363,24 +429,41 @@
         }
 
         .project-image {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(30, 64, 175, 0.1));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-light);
-            font-size: 0.85rem;
-            position: relative;
-            overflow: hidden;
-        }
+    width: 100%;
+    aspect-ratio: 16/9;
 
-        .project-image::before {
-            content: 'ADD PROJECT IMAGE (Recommended: 800×450px)';
-            text-align: center;
-            font-weight: 500;
-            color: var(--text-light);
-        }
+    background: linear-gradient(
+        135deg,
+        #f8e7c7,
+        #f4d8a8
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    border-bottom: 1px solid rgba(205, 133, 63, 0.25);
+}
+
+.project-image i {
+    font-size: 4rem;
+
+    color: #c96f1a;
+
+    text-shadow:
+        0 0 12px rgba(255, 166, 0, 0.35);
+
+    transition: 0.4s ease;
+}
+
+.project-card:hover .project-image i {
+    transform: scale(1.12) rotate(4deg);
+
+    color: #e67e22;
+}
 
         .project-content {
             padding: 1.5rem;
@@ -435,6 +518,7 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+            justify-content: space-between;
         }
 
         .internship-card::before {
@@ -489,6 +573,7 @@
             padding: 2rem;
             transition: var(--transition);
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+            justify-content:space-between;
         }
 
         .education-card:hover {
@@ -534,6 +619,7 @@
             overflow: hidden;
             transition: var(--transition);
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+            justify-content: space-between;
         }
 
         .certificate-card:hover {
@@ -587,6 +673,58 @@
             box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15);
         }
 
+        .project-card,
+.certificate-card,
+.education-card,
+.internship-card {
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+}
+
+        .project-card,
+        .internship-card,
+        .education-card,
+        .certificate-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content,
+        .certificate-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .project-content .btn,
+        .internship-card .btn,
+        .education-card .btn,
+        .certificate-content .btn {
+            margin-top: auto;
+            align-self: flex-start;
+        }
+
+        .project-card,
+.internship-card,
+.education-card,
+.certificate-card,
+.contact-card,
+.skill-category,
+.contact-section {
+
+    background: rgba(255, 248, 239, 0.95);
+
+    border: 1px solid rgba(108, 139, 167, 0.18);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 4px 18px rgba(91,124,153,0.08),
+        inset 0 0 8px rgba(238, 141, 45, 0.333);
+
+    color: #2f3542;
+}
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -689,14 +827,16 @@
             min-height: 120px;
         }
 
-        footer {
-            background: linear-gradient(135deg, #1e40af, #1f2937);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            border-top: 2px solid rgba(59, 130, 246, 0.3);
-        }
+       footer {
+    background: linear-gradient(135deg, #6c8ba7, #d98c3f);
+
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+
+    border-top: 2px solid rgba(91, 124, 153, 0.2);
+}
 
         .social-links {
             display: flex;
@@ -721,6 +861,39 @@
         .social-links a:hover {
             background: var(--primary);
             transform: translateY(-3px);
+        }
+
+        .header-profile {
+            display: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(30, 64, 175, 0.2));
+            border: 3px solid white;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            animation: slideDown 0.5s ease;
+        }
+
+        .header-profile:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        }
+
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 768px) {
@@ -812,20 +985,110 @@
                 font-size: 1.3rem;
             }
         }
+
+.header-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: linear-gradient(135deg, #d97706, #ea580c);
+
+    color: #fff7ed;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    font-size: 0.82rem;
+
+    width: 240px;
+
+    text-align: center;
+
+    white-space: normal;
+
+    line-height: 1.5;
+
+    z-index: 100000;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 6px 18px rgba(234, 88, 12, 0.35),
+        0 0 10px rgba(251, 146, 60, 0.25);
+}
+
+.tooltip-text::after {
+    content: "";
+
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-width: 8px;
+
+    border-style: solid;
+
+    border-color: #ea580c transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Allow tooltips to appear above all cards */
+.projects-grid {
+    overflow: visible;
+}
+
+.project-card {
+    position: relative;
+    z-index: 1;
+}
+
+.project-card:hover {
+    z-index: 9999;
+}
+
     </style>
 </head>
-<body>
+
+<body class="top">
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">Your Name</a>
+                <a href="#top" class="logo">Anand's Portfolio</a>
+                <div class="header-profile" id="headerProfile" title="Back to Profile">
+                    <img src="Mypic.jpg" alt="Profile">
+                </div>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#internship">Internship</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#certificates">Certificates</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="menu-toggle" id="menuToggle">
                     <span></span>
@@ -838,8 +1101,8 @@
 
     <div class="container">
         <section class="hero">
-            <h1>Hi, I'm Your Name</h1>
-            <p class="subtitle">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
+            <h1>Hi, I'm Nirmal Anand A</h1>
+            <p class="subtitle">Full Stack Developer | Entry Level Programmer | Tech Enthusiast</p>
             <div class="btn-group">
                 <a href="#projects" class="btn">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -852,118 +1115,119 @@
         <div class="about-content">
             <div class="profile-image-container">
                 <div class="profile-image">
-                    <i class="fas fa-user"></i>
+                    <img src="Mypic.jpg" alt="Profile Image">
                 </div>
             </div>
             <div class="about-text">
-                <h3>I create solutions through code</h3>
-                <p>
-                    I'm a passionate full-stack developer with a strong foundation in modern web technologies. 
-                    With expertise in JavaScript, React, Node.js, and cloud platforms, I build scalable applications 
-                    that solve real-world problems. My journey in tech started with a curiosity about how things work, 
-                    which evolved into a career dedicated to creating elegant solutions.
-                </p>
-                <p>
-                    I believe in writing clean, maintainable code and following best practices in software development. 
-                    Every project I undertake is an opportunity to learn something new and contribute meaningful work. 
-                    My approach combines technical excellence with user-centric design, ensuring that applications 
-                    are both powerful and intuitive.
-                </p>
-                <p>
-                    Beyond coding, I'm an active member of the developer community. I contribute to open-source projects, 
-                    participate in hackathons, and love mentoring junior developers. When not coding, you'll find me 
-                    exploring emerging technologies, reading tech blogs, or collaborating with other developers on 
-                    innovative projects.
-                </p>
-                <p>
-                    I'm always eager to take on new challenges and work with talented teams to create products that make a difference.
-                </p>
-                <a href="#contact" class="btn" style="margin-top: 1.5rem;">Let's Collaborate</a>
-            </div>
+    <h3>Passionate MCA Student & Entry-Level Developer</h3>
+
+    <p>
+        I am an enthusiastic Master of Computer Applications (MCA) student with a strong interest in software development, web technologies, and problem-solving. I enjoy building responsive and user-friendly applications while continuously improving my technical and analytical skills.
+    </p>
+
+    <p>
+        My knowledge includes HTML, CSS, JavaScript, Java, Python, Flutter, Firebase, and database management. I have developed academic and personal projects that helped me understand real-world application development, UI design, and modern programming practices.
+    </p>
+
+    <p>
+        I possess strong problem-solving abilities and enjoy learning new technologies through practical implementation. I am passionate about writing clean, structured, and efficient code while improving my understanding of full-stack development concepts.
+    </p>
+
+    <p>
+        As a motivated entry-level programmer, I am eager to gain industry experience, contribute to meaningful projects, and grow professionally in the software development field.
+    </p>
+</div>
         </div>
     </section>
 
     <section id="projects" class="container">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">Projects Done So Far</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-image"></div>
+                <div class="project-image">
+                     <i class="fas fa-camera"></i>
+                </div>
                 <div class="project-content">
-                    <h3>Project Title 1</h3>
-                    <p>Describe your first project here. Explain the problem it solves, technologies used, and the impact it made. Include key features and achievements.</p>
+                    <h3>OCR & TTS Application</h3>
+                    <p>Optical Character Recognition and Text to Speech Generation Application using Machine Learning, that captures and Read Text, which works through Offline</p>
                     <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">MongoDB</span>
+                        <span class="tag tooltip">Java<span class="tooltip-text">Java is a powerful, high-level programming language widely used for building mobile apps and web applications.</span></span>
+                        <span class="tag tooltip">Android API's<span class="tooltip-text">An API is a set of rules and tools that allow different software components to talk to each other.</span></span>
+                        <span class="tag tooltip">Kotlin<span class="tooltip-text">Kotlin is a modern programming language designed to be easy to read and write, primarily used for building Android apps.</span></span>
                     </div>
-                    <a href="#" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">View Project</a>
+                    <a href="OCR.pdf" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">View Project Details</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <div class="project-image"></div>
+                <div class="project-image">
+                    <i class="fas fa-music"></i>
+                </div>
                 <div class="project-content">
-                    <h3>Project Title 2</h3>
-                    <p>Describe your second project. Share the technical challenges overcome, your role in the project, and the results achieved. Highlight what made it unique.</p>
+                    <h3>Music Application</h3>
+                    <p>Personalized Music Application that Allows you to Detect your mood and Play Music Regarding your curent mood</p>
                     <div class="project-tags">
-                        <span class="tag">Vue.js</span>
-                        <span class="tag">Firebase</span>
-                        <span class="tag">Tailwind</span>
+                        <span class="tag tooltip">Java<span class="tooltip-text">Java is a powerful, high-level programming language widely used for building mobile apps and web applications.</span></span>
+                        <span class="tag tooltip">Shared Preferences<span class="tooltip-text">Shared Preferences is used to store and retrieve small amounts of primitive data as key-value pairs.</span></span>
+                        <span class="tag tooltip">Kotlin<span class="tooltip-text">Kotlin is a modern programming language designed to be easy to read and write, primarily used for building Android apps.</span></span>
                     </div>
-                    <a href="#" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">View Project</a>
+                    <a href="Music.pdf" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">View Project Details</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <div class="project-image"></div>
+                <div class="project-image">
+                     <i class="fas fa-laptop-code"></i>
+                </div>
                 <div class="project-content">
-                    <h3>Project Title 3</h3>
-                    <p>Describe your third project. Include information about the development process, technologies employed, and measurable outcomes or features delivered.</p>
+                    <h3>Portfolio Web</h3>
+                    <p>Personal Portfolio Web page to know more about me, My interest over Technology and My career </p>
                     <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Django</span>
-                        <span class="tag">PostgreSQL</span>
+                        <span class="tag tooltip">HTML<span class="tooltip-text">HTML (HyperText Markup Language) is the standard language used to create and structure web pages.</span></span>
+                        <span class="tag tooltip">CSS<span class="tooltip-text">CSS (Cascading Style Sheets) is the language used to style and layout web pages.</span></span>
+                        <span class="tag tooltip">JavaScript<span class="tooltip-text">JavaScript is the programming language of the web. JavaScript is what makes a website interactive and "alive".</span></span>
                     </div>
-                    <a href="#" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">View Project</a>
+                    <a class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;" onclick="showPortfolioAlert()">View Portfolio</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="internship" class="container">
-        <h2 class="section-title">Internship & Experience</h2>
+        <h2 class="section-title">Intern Experience</h2>
         <div class="internship-grid">
             <div class="internship-card">
-                <h4>Junior Developer Intern</h4>
-                <p class="company">Company Name</p>
-                <p class="duration">June 2023 - August 2023</p>
+                <h4>Web Development Course</h4>
+                <p class="company">Skill Vertex</p>
+                <p class="duration">May 2024 - June 2024</p>
                 <p>
-                    Worked on frontend development using React and modern CSS. Collaborated with senior developers 
-                    to implement new features and fix bugs. Gained hands-on experience with version control, testing, 
-                    and agile development methodologies. Contributed to a project that improved user engagement by 25%.
+                   Learnt Basics on HTML, CSS, XML, JSon and JavaScript. Learnt to Build a Website and Host it Online.
+                   Learnt How HTML and CSS works with JavaScript. Learnt about Server-side Scripting and Database Integration.
                 </p>
+                <a href="Course2.pdf" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">View Certificate</a>
+            </div>
+
+            <div class="internship-card">
+                <h4>Web Development Intern</h4>
+                <p class="company">Skill Vertex</p>
+                <p class="duration">June 2024 - July 2024</p>
+                <p>
+                   Implemented Basics on HTML, CSS, XML, JSon and JavaScript and Trained to Build a Website and Host it Online.
+                   Implemented HTML and CSS with JavaScript and Created a Website that respond well with better user-interface.
+                </p>
+                <a href="Course.pdf" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">View Certificate</a>
             </div>
 
             <div class="internship-card">
                 <h4>Full Stack Developer Intern</h4>
-                <p class="company">Another Company</p>
-                <p class="duration">January 2023 - May 2023</p>
+                <p class="company">FrontierWox Tech Pvt Ltd</p>
+                <p class="duration">May 2026 - June 2026</p>
                 <p>
-                    Developed both frontend and backend features for internal tools. Implemented REST APIs using Node.js 
-                    and Express, and created responsive UI components with React. Participated in code reviews and learned 
-                    best practices for clean code. Improved database query performance by 40%.
+                    Leanrt to build a Website using HTML, CSS, JavaScript and Also used Figma Designing for UI.
+                    Made a personal Porfolio Wesite that Gives more information about me. And Also trained to Attend 
+                    Interviews Professionally with Professional Resume.
                 </p>
-            </div>
-
-            <div class="internship-card">
-                <h4>Backend Developer Intern</h4>
-                <p class="company">Tech Startup</p>
-                <p class="duration">August 2022 - December 2022</p>
-                <p>
-                    Focused on backend development using Python and Django framework. Built microservices for data processing 
-                    and implemented authentication systems. Worked with databases and APIs. Contributed to deploying services 
-                    using Docker and managed cloud infrastructure.
-                </p>
+                <a href="OfferLetter.pdf" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">View Certificate</a>
             </div>
         </div>
     </section>
@@ -972,32 +1236,34 @@
         <h2 class="section-title">Education</h2>
         <div class="education-grid">
             <div class="education-card">
-                <h4>Bachelor of Technology in Computer Science</h4>
-                <p class="institution">Your University Name</p>
-                <p class="duration">2020 - 2024</p>
+                <h4>Master of Computer Application</h4>
+                <p class="institution">St. Joseph's College (Autonomous)</p>
+                <p class="duration">2025 - Present</p>
                 <p class="details">
-                    <strong>CGPA:</strong> 8.5/10 | <strong>Relevant Coursework:</strong> Data Structures, Algorithms, 
+                    <strong>Current CGPA:</strong> 7.2/10 | <strong> Coursework:</strong> Software Engineering, 
+                    Python Development, Flutter and Firebase, Databse Management.
+                </p>
+                <a href="https://www.sjctni.edu/" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">Visit institution</a>
+            </div>
+            <div class="education-card">
+                <h4>Bachelor of Computer Application</h4>
+                <p class="institution">The American College (Autonomous)</p>
+                <p class="duration">2022 - 2025</p>
+                <p class="details">
+                    <strong>CGPA:</strong> 7.5/10 | <strong> Coursework:</strong> Data Structures, Algorithms, 
                     Web Development, Database Management, Cloud Computing
                 </p>
+                <a href="https://americancollege.edu.in/" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">Visit institution</a>
             </div>
 
             <div class="education-card">
                 <h4>Higher Secondary Certificate (12th Grade)</h4>
-                <p class="institution">School Name</p>
-                <p class="duration">2018 - 2020</p>
+                <p class="institution">Cambridge Matric Higher Secondary School</p>
+                <p class="duration">2021 - 2022</p>
                 <p class="details">
-                    <strong>Score:</strong> 92% | Specialized in Mathematics, Physics, and Chemistry
+                    <strong>Score:</strong> 73% | Specialized in Mathematics and Computer Science
                 </p>
-            </div>
-
-            <div class="education-card">
-                <h4>Full Stack Web Development Bootcamp</h4>
-                <p class="institution">Online Learning Platform</p>
-                <p class="duration">2022 - 2023</p>
-                <p class="details">
-                    <strong>Certificate Earned:</strong> Completed comprehensive training in React, Node.js, MongoDB, 
-                    and modern web development practices.
-                </p>
+                <a href="https://cambridgematricschool.in/" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">Visit institution</a>
             </div>
         </div>
     </section>
@@ -1008,36 +1274,30 @@
             <div class="certificate-card">
                 <div class="certificate-image"></div>
                 <div class="certificate-content">
-                    <h4>Certificate Name 1</h4>
-                    <p class="issuer">Issued by Certifying Organization</p>
-                    <p class="date">Issued: Month Year</p>
+                    <h4>Training Completion</h4>
+                    <p class="issuer">Issued by Skill Vertex</p>
+                    <p class="date">Issued: June 2024</p>
+                    <a href="Course2.pdf" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">View Certificate</a>
                 </div>
             </div>
 
             <div class="certificate-card">
                 <div class="certificate-image"></div>
                 <div class="certificate-content">
-                    <h4>Certificate Name 2</h4>
-                    <p class="issuer">Issued by Certifying Organization</p>
-                    <p class="date">Issued: Month Year</p>
+                    <h4>Internship Completion</h4>
+                    <p class="issuer">Issued by Skill Vertex</p>
+                    <p class="date">Issued: July 2024</p>
+                    <a href="Course.pdf" class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">View Certificate</a>
                 </div>
             </div>
 
             <div class="certificate-card">
                 <div class="certificate-image"></div>
                 <div class="certificate-content">
-                    <h4>Certificate Name 3</h4>
-                    <p class="issuer">Issued by Certifying Organization</p>
-                    <p class="date">Issued: Month Year</p>
-                </div>
-            </div>
-
-            <div class="certificate-card">
-                <div class="certificate-image"></div>
-                <div class="certificate-content">
-                    <h4>Award or Achievement</h4>
-                    <p class="issuer">Organization or Event Name</p>
-                    <p class="date">Awarded: Month Year</p>
+                    <h4>Internship</h4>
+                    <p class="issuer">Issued by FrontierWox Tech</p>
+                    <p class="date">Issued: June 2026</p>
+                    <a class="btn" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;" onclick="showAlert()">View Certificate</a>
                 </div>
             </div>
         </div>
@@ -1052,96 +1312,90 @@
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
                 <!-- LinkedIn Button -->
-                <div style="background: white; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; text-align: center; transition: var(--transition);" class="contact-card">
-                    <div style="font-size: 2.5rem; color: #0a66c2; margin-bottom: 1rem;">
+                <div style="background: rgba(255,248,239,0.95); border: 1px solid rgba(108,139,167,0.18); border-radius: 12px; padding: 2rem; text-align: center; transition: var(--transition);" class="contact-card">
+                    <div style="font-size: 2.5rem; color: #5b7c99;; margin-bottom: 1rem;">
                         <i class="fab fa-linkedin"></i>
                     </div>
                     <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.3rem;">LinkedIn</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
                         Connect with me on LinkedIn for professional updates and opportunities.
                     </p>
-                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; text-align: center; display: inline-block;">
+                    <a href="https://www.linkedin.com/in/nirmal-anand-b57718393?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; text-align: center; display: inline-block;">
                         <i class="fab fa-linkedin" style="margin-right: 0.5rem;"></i> Visit Profile
                     </a>
                 </div>
 
                 <!-- Email Button -->
-                <div style="background: white; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; text-align: center; transition: var(--transition);" class="contact-card">
-                    <div style="font-size: 2.5rem; color: #ea4335; margin-bottom: 1rem;">
+                <div style="background: rgba(255,248,239,0.95); border: 1px solid rgba(108,139,167,0.18); border-radius: 12px; padding: 2rem; text-align: center; transition: var(--transition);" class="contact-card">
+                    <div style="font-size: 2.5rem; color: #d98c3f; margin-bottom: 1rem;">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.3rem;">Email</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
                         Send me an email and I'll respond within 24 hours.
                     </p>
-                    <a href="mailto:your.email@gmail.com" class="btn" style="width: 100%; text-align: center; display: inline-block;">
+                    <a href="mailto:nirmalanand205@gmail.com" class="btn" style="width: 100%; text-align: center; display: inline-block;">
                         <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i> Send Email
                     </a>
                 </div>
 
                 <!-- Phone Button -->
-                <div style="background: white; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; text-align: center; transition: var(--transition);" class="contact-card">
-                    <div style="font-size: 2.5rem; color: #25d366; margin-bottom: 1rem;">
+                <div style="background: rgba(255,248,239,0.95); border: 1px solid rgba(108,139,167,0.18); border-radius: 12px; padding: 2rem; text-align: center; transition: var(--transition);" class="contact-card">
+                    <div style="font-size: 2.5rem; color: #c47a2c; margin-bottom: 1rem;">
                         <i class="fas fa-phone"></i>
                     </div>
                     <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.3rem;">Call Me</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
                         Give me a call for quick discussions or urgent matters.
                     </p>
-                    <a href="tel:+1234567890" class="btn" style="width: 100%; text-align: center; display: inline-block;">
+                    <a href="tel:+917010246071" class="btn" style="width: 100%; text-align: center; display: inline-block;">
                         <i class="fas fa-phone" style="margin-right: 0.5rem;"></i> Call Now
                     </a>
                 </div>
-            </div>
+                <div style="background: rgba(255,248,239,0.95); border: 1px solid rgba(108,139,167,0.18); border-radius: 12px; padding: 2rem; text-align: center; transition: var(--transition);" class="contact-card">
+    
+    <div style="font-size: 2.5rem; color: #5b7c99; margin-bottom: 1rem;">
+        <i class="fab fa-github"></i>
+    </div>
 
-            <!-- Divider -->
-            <div style="text-align: center; margin: 3rem 0; position: relative;">
-                <div style="border-top: 1px solid var(--border);"></div>
-                <span style="background: white; padding: 0 1rem; color: var(--text-light); position: relative; top: -12px; font-size: 0.9rem;">OR</span>
-            </div>
+    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.3rem;">
+        GitHub
+    </h3>
 
-            <!-- Contact Form -->
-            <div class="contact-section" style="margin-top: 2rem;">
-                <h3 style="text-align: center; color: var(--text-primary); margin-bottom: 1.5rem; font-size: 1.3rem;">Send Me a Message</h3>
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%; font-size: 1rem;">Send Message</button>
-                </form>
+    <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+        Visit my GitHub profile to explore my projects, repositories, and development work.
+    </p>
+
+    <a href="https://github.com/nirmalanand2004" 
+       target="_blank"
+       class="btn" 
+       style="width: 100%; text-align: center; display: inline-block;">
+
+        <i class="fab fa-github" style="margin-right: 0.5rem;"></i>
+        Visit GitHub
+    </a>
+
+</div>
             </div>
-        </div>
     </section>
 
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="#" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="#" title="Portfolio" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+                <a href="https://github.com/nirmalanand2004" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/nirmal-anand-b57718393?utm_source=share_via&utm_content=profile&utm_medium=member_android" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/_a.n.a.n.t.h._?igsh=ODk2Mnp6eWhueHM3" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:nirmalanand205@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <p>&copy; Built and Developed by Ananth</p>
+            <p>&copy; Designed and Developed by Ananth</p>
         </div>
     </footer>
 
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.querySelector('.nav-links');
+        const headerProfile = document.getElementById('headerProfile');
+        const aboutSection = document.getElementById('about');
 
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
@@ -1153,6 +1407,21 @@
                 menuToggle.classList.remove('active');
                 navLinks.classList.remove('active');
             });
+        });
+
+        headerProfile.addEventListener('click', () => {
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        window.addEventListener('scroll', () => {
+            const aboutTop = aboutSection.offsetTop;
+            const currentScroll = window.scrollY;
+
+            if (currentScroll > aboutTop - 100) {
+                headerProfile.style.display = 'flex';
+            } else {
+                headerProfile.style.display = 'none';
+            }
         });
 
         const contactForm = document.getElementById('contactForm');
@@ -1184,6 +1453,14 @@
             });
         }, observerOptions);
 
+        function showPortfolioAlert() {
+            alert("Ooops!! Sorry, You're already in My Portfolio");
+        }
+
+        function showAlert() {
+            alert("I'm Still Proceeding my Internship in FWT");
+        }
+
         document.querySelectorAll('.skill-progress').forEach(el => {
             const width = el.style.width;
             el.setAttribute('data-width', width);
@@ -1191,5 +1468,104 @@
             observer.observe(el);
         });
     </script>
+    <script>
+document.addEventListener("click", function(e) {
+
+    for(let i = 0; i < 14; i++) {
+
+        const spark = document.createElement("div");
+
+        spark.style.position = "fixed";
+
+        spark.style.left = e.clientX + "px";
+        spark.style.top = e.clientY + "px";
+
+        spark.style.width = "8px";
+        spark.style.height = "8px";
+
+        spark.style.background = "#ffb300";
+
+spark.style.boxShadow =
+    "0 0 8px #ffb300, 0 0 18px #ff8c00, 0 0 30px rgba(255,140,0,0.8)";
+
+        spark.style.borderRadius = "50%";
+
+        spark.style.pointerEvents = "none";
+
+        spark.style.zIndex = "999999";
+
+        document.body.appendChild(spark);
+
+        const angle = Math.random() * 360;
+
+        const distance = 50 + Math.random() * 120;
+
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+
+        spark.animate([
+            {
+                transform: "translate(0,0) scale(1)",
+                opacity: 1
+            },
+            {
+                transform:
+                    `translate(${x}px, ${y}px) scale(0)`,
+                opacity: 0
+            }
+        ], {
+            duration: 800,
+            easing: "ease-out"
+        });
+
+        setTimeout(() => {
+            spark.remove();
+        }, 800);
+    }
+
+    const ripple = document.createElement("div");
+
+    ripple.style.position = "fixed";
+
+    ripple.style.left = e.clientX + "px";
+    ripple.style.top = e.clientY + "px";
+
+    ripple.style.width = "20px";
+    ripple.style.height = "20px";
+
+    ripple.style.border =
+       "2px solid rgba(255,140,0,0.7)";;
+
+    ripple.style.borderRadius = "50%";
+
+    ripple.style.pointerEvents = "none";
+
+    ripple.style.transform =
+        "translate(-50%, -50%) scale(0)";
+
+    ripple.style.opacity = "1";
+
+    ripple.style.zIndex = "999999";
+
+    ripple.style.transition =
+        "transform 0.8s ease-out, opacity 0.8s ease-out";
+
+    document.body.appendChild(ripple);
+
+    requestAnimationFrame(() => {
+
+        ripple.style.transform =
+            "translate(-50%, -50%) scale(8)";
+
+        ripple.style.opacity = "0";
+
+    });
+
+    setTimeout(() => {
+        ripple.remove();
+    }, 800);
+
+});
+</script>
 </body>
 </html>
